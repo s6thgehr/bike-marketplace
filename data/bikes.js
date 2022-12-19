@@ -1,6 +1,6 @@
 import BikeType from "../utils/bike_type";
 
-const bikes = [
+export const bikes = [
     {
         imageUrl: "sfd",
         price: "120.50",
@@ -63,7 +63,8 @@ const bikes = [
         model: "Giant Trance 2",
         type: BikeType.mountain.toString(),
         serialNumber: "2HI19037426",
-        description: "",
+        description:
+            "A full suspension mountain bike designed for aggressive trail riding and technical descents.",
     },
     {
         imageUrl: "sfd",
@@ -75,7 +76,8 @@ const bikes = [
         model: "Ibis Ripley LS",
         type: BikeType.mountain.toString(),
         serialNumber: "5TG22145789",
-        description: "",
+        description:
+            "A full suspension mountain bike designed for aggressive trail riding and technical descents.",
     },
     {
         imageUrl: "sfd",
@@ -87,7 +89,8 @@ const bikes = [
         model: "Santa Cruz Hightower LT",
         type: BikeType.mountain.toString(),
         serialNumber: "9JX17582093",
-        description: "",
+        description:
+            "A full suspension mountain bike designed for aggressive trail riding and technical descents.",
     },
     {
         imageUrl: "sfd",
@@ -99,7 +102,8 @@ const bikes = [
         model: "Orbea Orca M30",
         type: BikeType.road.toString(),
         serialNumber: "7ZS17583420",
-        description: "",
+        description:
+            "A endurance road bike with a comfortable and upright riding position and a lightweight carbon fiber frame.",
     },
     {
         imageUrl: "sfd",
@@ -111,7 +115,8 @@ const bikes = [
         model: "Kona Process 153",
         type: BikeType.mountain.toString(),
         serialNumber: "1YH3756537",
-        description: "",
+        description:
+            "A full suspension mountain bike designed for aggressive trail riding and technical descents.",
     },
     {
         imageUrl: "sfd",
@@ -123,7 +128,8 @@ const bikes = [
         model: "Fuji Transonic 2.1",
         type: BikeType.road.toString(),
         serialNumber: "9LM44536279",
-        description: "",
+        description:
+            "A endurance road bike with a comfortable and upright riding position and a lightweight carbon fiber frame.",
     },
 
     {
