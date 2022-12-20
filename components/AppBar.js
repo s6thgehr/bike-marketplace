@@ -14,7 +14,7 @@ function AppBar() {
                     The best marketplace for second hand bikes
                 </div>
                 <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-                    <button class="bg-[#D58EB0] hover:bg-[#B15983] py-2 px-4 rounded">
+                    <button className="bg-[#D58EB0] hover:bg-[#B15983] py-2 px-4 rounded">
                         Sign In
                     </button>
                 </div>
