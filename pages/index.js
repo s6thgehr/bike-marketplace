@@ -6,14 +6,10 @@ import Loading from "../components/Loading";
 import Filter from "../components/Filter";
 import { useState } from "react";
 import BikeType from "../utils/bike_type";
+import { useBikes } from "../hooks/useBikes";
 
 export default function Home() {
-    const bikesFetcher = (url) => axios.get(url).then((res) => res.data);
-    const {
-        data: bikes,
-        error,
-        isLoading,
-    } = useSWR(`${BASE_URL}/bikes`, bikesFetcher);
+    const { bikes, error, isLoading } = useBikes();
 
     const [filter, setFilter] = useState({});
 

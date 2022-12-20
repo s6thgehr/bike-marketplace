@@ -4,7 +4,15 @@
             "id": 1,
             "loginName": "Thomas",
             "password": "1234",
-            "listedBikes": [1, 11, 14]
+            "email": "thomas@email.com",
+            "mobile": "0123-456789"
+        },
+        {
+            "id": 2,
+            "loginName": "Anika",
+            "password": "1234",
+            "email": "anika@email.com",
+            "mobile": "0123-456789"
         }
     ],
     "bikes": [
@@ -25,7 +33,7 @@
         },
         {
             "id": 2,
-            "userId": 1,
+            "userId": 2,
             "itemState": "published",
             "imageUrl": "https://imgs.search.brave.com/HEniJJjNSUKgdcXg5t9Brtka-kKHSDJ4cUQwHjyXXZo/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9uYW5v/YmlrZS5kZS9tZWRp/YS9pbWFnZS84Ni85/Ni81MC9TcGVjaWFs/aXplZC1TLVdvcmtz/LVZlbmdlXzVfNTk5/MTNfMjIwMHgxNzYw/LmpwZw",
             "price": "620",
@@ -34,7 +42,7 @@
                 "lon": "43"
             },
             "model": "Specialized S-Works Venge",
-            "type": "Road Bike",
+            "type": "Road bike",
             "serialNumber": "7LG10460498",
             "description": "A high-performance road bike with a carbon fiber frame and aerodynamic design."
         },
@@ -64,7 +72,7 @@
                 "lon": "43"
             },
             "model": "Cannondale Synapse Carbon",
-            "type": "Road Bike",
+            "type": "Road bike",
             "serialNumber": "1KI57291748",
             "description": "A endurance road bike with a comfortable and upright riding position and a lightweight carbon fiber frame."
         },
@@ -124,7 +132,7 @@
                 "lon": "43"
             },
             "model": "Orbea Orca M30",
-            "type": "Road Bike",
+            "type": "Road bike",
             "serialNumber": "7ZS17583420",
             "description": "A endurance road bike with a comfortable and upright riding position and a lightweight carbon fiber frame."
         },
@@ -154,14 +162,13 @@
                 "lon": "43"
             },
             "model": "Fuji Transonic 2.1",
-            "type": "Road Bike",
+            "type": "Road bike",
             "serialNumber": "9LM44536279",
             "description": "A endurance road bike with a comfortable and upright riding position and a lightweight carbon fiber frame."
         },
-
         {
             "id": 11,
-            "userId": 1,
+            "userId": 2,
             "itemState": "published",
             "imageUrl": "https://imgs.search.brave.com/t_eP9t5o_WGuAds7VRdJ8G2aAMpQCyia9tkyEALXRtY/rs:fit:1200:900:1/g:ce/aHR0cHM6Ly90cmVr/LnNjZW5lNy5jb20v/aXMvaW1hZ2UvVHJl/a0JpY3ljbGVQcm9k/dWN0cy9WZXJ2ZTNF/cXVpcHBlZExvd3N0/ZXBfMjFfMzM1Mzhf/QV9Qb3J0cmFpdD93/aWQ9MTIwMA",
             "price": "442",
@@ -191,7 +198,7 @@
         },
         {
             "id": 13,
-            "userId": 1,
+            "userId": 2,
             "itemState": "published",
             "imageUrl": "https://imgs.search.brave.com/LwNpvsGCb5OjH27W6GM7TxymqIr26h-cuUPoSTr5hUg/rs:fit:1024:576:1/g:ce/aHR0cDovL2ltYWdl/cy5jcnVpc2VyYmlr/ZXMuYml6L2wtbS93/b21lbi1zLXNhbmN0/dWFyeS03LXNwZWVk/LWNydWlzZXItYmlj/eWNsZS5qcGc",
             "price": "399",
@@ -251,7 +258,7 @@
         },
         {
             "id": 17,
-            "userId": 1,
+            "userId": 2,
             "itemState": "published",
             "imageUrl": "https://imgs.search.brave.com/QvjEYk__oXVl19yyrXgm6J2BYmLfFwng5hIO1vSz7-c/rs:fit:1200:853:1/g:ce/aHR0cHM6Ly93d3cu/Y3htYWdhemluZS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTkvMDgvMjAyMC10/cmVrLWNyb2NrZXR0/LTUtY3ljbG9jcm9z/cy1iaWtlLWNyb2Nr/ZXQtMjAxOS0xMzE0/LWVkLWN4bS1jbGVl/LmpwZw",
             "price": "460",
@@ -281,7 +288,7 @@
         },
         {
             "id": 19,
-            "userId": 1,
+            "userId": 2,
             "itemState": "published",
             "imageUrl": "https://imgs.search.brave.com/5JRiae11aaEjrlefF-ebcIjxN3IiHWrJhRMHGkgLUmY/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9maWxl/cy5iaWtlaW5kZXgu/b3JnL3VwbG9hZHMv/UHUvMTI4NTU5L0lN/R18wMDYzLkpQRw",
             "price": "600",
@@ -326,7 +333,7 @@
         },
         {
             "id": 22,
-            "userId": 1,
+            "userId": 2,
             "itemState": "published",
             "imageUrl": "https://imgs.search.brave.com/Q_2JbiuRqKjd1rjnSIpqPxp9aS3AmaIsArFM0eZpkYE/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9ibXht/dXNldW0uY29tL2lt/YWdlLzIwMTctc2Ut/cmFjaW5nLWJpZy1y/aXBwZXItMjkyMi0w/MDM1OGQ4Yjk3ZmFh/X2Jsb3d1cC5qcGc",
             "price": "120",
@@ -341,7 +348,7 @@
         },
         {
             "id": 23,
-            "userId": 1,
+            "userId": 2,
             "itemState": "published",
             "imageUrl": "https://imgs.search.brave.com/kfWKdCUaVWly6znRV31Skd4eSiCDRTsSIj79i2pG6tY/rs:fit:1024:768:1/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tLzAw/L3MvTnpZNFdERXdN/alE9L3ovZmlJQUFP/U3d3dGRjSjlDMS8k/Xzg2LkpQRw",
             "price": "220",
@@ -356,7 +363,7 @@
         },
         {
             "id": 24,
-            "userId": 1,
+            "userId": 2,
             "itemState": "published",
             "imageUrl": "https://imgs.search.brave.com/RBSztsRkzrn4jvwgBs8hgWLSFtlYGOWVmlWagaX9yeM/rs:fit:1024:768:1/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tLzAw/L3MvTnpZNFdERXdN/alE9L3ovcmlzQUFP/U3c1ckZhN0M0cy8k/Xzg2LkpQRw",
             "price": "180",
@@ -386,7 +393,7 @@
         },
         {
             "id": 26,
-            "userId": 1,
+            "userId": 2,
             "itemState": "published",
             "imageUrl": "https://imgs.search.brave.com/N3SgyEab_aiMTf6qMeitabPFTM8bIb5-7j67GA_maJg/rs:fit:1200:800:1/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF85/MzY0OTktTVBFNDM5/NTY3NzMxOTlfMTAy/MDIwLUYuanBn",
             "price": "1999",

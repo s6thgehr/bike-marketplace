@@ -4,7 +4,7 @@ function DetailsView({ bike }) {
             <div className="w-1/2">
                 <img src={bike.imageUrl} alt={bike.model} className="w-full" />
             </div>
-            <div class="w-1/2 grid grid-rows-5 grid-flow-col gap-4">
+            <div className="w-1/2 grid grid-rows-5 grid-flow-col gap-4">
                 <h2 className="px-4 pt-4 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
                     {bike.model}
                 </h2>

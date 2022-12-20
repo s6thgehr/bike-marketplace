@@ -1,8 +1,23 @@
 import Layout from "../components/Layout";
 import Head from "next/head";
 import "../styles/globals.css";
+import { useUserStore } from "../stores/useUserStore";
+import axios from "axios";
+import { useEffect } from "react";
+import { BASE_URL } from "../utils/baseUrl";
 
 export default function App({ Component, pageProps }) {
+    const setUsers = useUserStore((state) => state.setUsers);
+    useEffect(() => {
+        axios
+            .get(`${BASE_URL}/users`)
+            .then((response) => {
+                setUsers(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
     return (
         <>
             <Head>
