@@ -7,15 +7,15 @@ import Filter from "../components/Filter";
 import { useState } from "react";
 import BikeType from "../utils/bike_type";
 import { useBikes } from "../hooks/useBikes";
+import { useBikeStore } from "../stores/useBikeStore";
 
 export default function Home() {
-    const { bikes, error, isLoading } = useBikes();
+    // const { bikes, error, isLoading } = useBikes();
+    const bikes = useBikeStore((state) => state.bikes);
 
     const [filter, setFilter] = useState({});
 
-    return isLoading ? (
-        <Loading />
-    ) : (
+    return (
         <div className="bg-white">
             <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
                 <h2 className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
@@ -25,7 +25,7 @@ export default function Home() {
 
                 <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
                     {bikes
-                        .filter((bike) => bike.itemState === "published")
+                        ?.filter((bike) => bike.itemState === "published")
                         .filter((bike) => {
                             const selected = Object.keys(filter).filter(
                                 (key) => filter[key]

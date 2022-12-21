@@ -6,18 +6,36 @@ import { useBikes } from "../hooks/useBikes";
 import { useUserStore } from "../stores/useUserStore";
 import { useUser } from "../hooks/useUser";
 import Loading from "./Loading";
+import { IoLogOutOutline } from "react-icons/io5";
+import { useBikeStore } from "../stores/useBikeStore";
+import axios from "axios";
+import { BASE_URL } from "../utils/baseUrl";
+import Link from "next/link";
 
 export default function OwnBikeList() {
     const show = useListedBikeStore((state) => state.show);
     const dontShow = useListedBikeStore((state) => state.dontShow);
     const loginId = useUserStore((state) => state.loggedInUserId);
+    const logout = useUserStore((state) => state.logout);
+    const removeBike = useBikeStore((state) => state.removeBike);
     const { user } = useUser(loginId);
-    const { bikes, isLoading } = useBikes();
+    // const { bikes, isLoading } = useBikes();
+    const bikes = useBikeStore((state) => state.bikes);
     const ownBikes = bikes?.filter((bike) => {
         return bike.userId === user?.id;
     });
 
-    if (isLoading) return <Loading />;
+    function deleteBike(id) {
+        axios
+            .delete(`${BASE_URL}/bikes/${id}`)
+            .then((response) => {
+                console.log(response);
+                removeBike(id);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
 
     return (
         <Transition.Root show={show} as={Fragment}>
@@ -121,18 +139,30 @@ export default function OwnBikeList() {
                                                                         </div>
                                                                         <div className="flex flex-1 items-end justify-between text-sm">
                                                                             <div className="flex">
-                                                                                <button
-                                                                                    type="button"
-                                                                                    className="font-medium text-[#B15983] hover:text-[#6A123C]"
+                                                                                <Link
+                                                                                    href={`/bike/edit/${bike.id}`}
                                                                                 >
-                                                                                    Edit
-                                                                                </button>
+                                                                                    <button
+                                                                                        onClick={
+                                                                                            dontShow
+                                                                                        }
+                                                                                        type="button"
+                                                                                        className="font-medium text-[#B15983] hover:text-[#6A123C]"
+                                                                                    >
+                                                                                        Edit
+                                                                                    </button>
+                                                                                </Link>
                                                                             </div>
 
                                                                             <div className="flex">
                                                                                 <button
                                                                                     type="button"
                                                                                     className="font-medium text-[#B15983] hover:text-[#6A123C]"
+                                                                                    onClick={() =>
+                                                                                        deleteBike(
+                                                                                            bike.id
+                                                                                        )
+                                                                                    }
                                                                                 >
                                                                                     Remove
                                                                                 </button>
@@ -149,12 +179,26 @@ export default function OwnBikeList() {
 
                                         <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                                             <div className="mt-6">
-                                                <a
-                                                    href="#"
+                                                <Link
+                                                    onClick={dontShow}
+                                                    href="/bike/new"
                                                     className="flex items-center justify-center rounded-md border border-transparent bg-[#B15983] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-[#6A123C]"
                                                 >
                                                     List another bike
-                                                </a>
+                                                </Link>
+                                            </div>
+                                            <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
+                                                <button
+                                                    type="button"
+                                                    className="font-medium text-[#6A123C] hover:text-[#B15983]"
+                                                    onClick={() => {
+                                                        logout();
+                                                        dontShow();
+                                                    }}
+                                                >
+                                                    Logout
+                                                    <IoLogOutOutline className="ml-2 inline" />
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
