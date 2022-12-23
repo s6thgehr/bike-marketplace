@@ -11,7 +11,11 @@ function classNames(...classes) {
 export default function Filter({ filter, setFilter }) {
     const ref = useRef(null);
     return (
-        <form>
+        <form
+            onClick={(e) => {
+                e.preventDefault();
+            }}
+        >
             <Menu as="div" className="relative inline-block text-left">
                 <div>
                     <Menu.Button
@@ -76,33 +80,34 @@ export default function Filter({ filter, setFilter }) {
                                                 "block px-4 py-2 text-sm form-check"
                                             )}
                                         >
-                                            <label className="form-check-label inline-block text-gray-800">
+                                            <label
+                                                className="form-check-label inline-block text-gray-800"
+                                                htmlFor={type.toString()}
+                                            >
                                                 {type.toString()}
-                                                <input
-                                                    className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-[#8E2F5C] checked:border-[#8E2F5C] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox"
-                                                    value=""
-                                                    checked={
-                                                        filter[type.toString()]
-                                                            ? true
-                                                            : false
-                                                    }
-                                                    name={type.toString()}
-                                                    onChange={(e) => {
-                                                        setFilter(
-                                                            (prevState) => {
-                                                                return {
-                                                                    ...prevState,
-                                                                    [e.target
-                                                                        .name]:
-                                                                        e.target
-                                                                            .checked,
-                                                                };
-                                                            }
-                                                        );
-                                                    }}
-                                                />
                                             </label>
+                                            <input
+                                                className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-[#8E2F5C] checked:border-[#8E2F5C] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                                                type="checkbox"
+                                                id={type.toString()}
+                                                value=""
+                                                checked={
+                                                    filter[type.toString()]
+                                                        ? true
+                                                        : false
+                                                }
+                                                name={type.toString()}
+                                                onChange={(e) => {
+                                                    setFilter((prevState) => {
+                                                        return {
+                                                            ...prevState,
+                                                            [e.target.name]:
+                                                                e.target
+                                                                    .checked,
+                                                        };
+                                                    });
+                                                }}
+                                            />{" "}
                                         </div>
                                     )}
                                 </Menu.Item>
