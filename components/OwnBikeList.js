@@ -28,8 +28,7 @@ export default function OwnBikeList() {
     function deleteBike(id) {
         axios
             .delete(`${BASE_URL}/bikes/${id}`)
-            .then((response) => {
-                console.log(response);
+            .then(() => {
                 removeBike(id);
             })
             .catch((error) => {

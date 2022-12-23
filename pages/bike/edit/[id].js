@@ -35,7 +35,7 @@ function EditBike() {
                     type: bike?.type,
                     description: bike?.description,
                     imageUrl: bike?.imageUrl,
-                    location: bike?.city,
+                    city: bike?.city,
                     price: bike?.price,
                 }}
                 handleSubmit={edit}
